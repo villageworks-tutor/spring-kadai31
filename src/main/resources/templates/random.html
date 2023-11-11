@@ -11,7 +11,8 @@
 			<select name="charLength">
 				<option th:each="i : ${#numbers.sequence(5, 10)}" th:value="${i}" th:text="${i}+ '文字'"></option> 
 			</select>
-			<input type="checkbox" name="withNumber" value="true" />数字を含める<br />
+			<input type="checkbox" name="withNumber" value="true" />数字を含める
+			<input type="checkbox" name="withAlphabet" value="true" />英字を含める<br />
 			<input type="number" name="createdCount" />個生成する
 		</p>
 		<p>
