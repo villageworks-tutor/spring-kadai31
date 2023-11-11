@@ -13,16 +13,16 @@ public class RandomStringService {
 
 	/**
 	 * ランダムな文字列のリストを生成する
-	 * @param charLength 生成する文字列の文字数
-	 * @param withNumber 生成する文字列に数字を含めるかどうか：数字を含む場合はtrue、それ以外はfalse
-	 * @param count 
+	 * @param charLength   生成する文字列の文字数
+	 * @param withNumber   生成する文字列に数字を含めるかどうか：数字を含む場合はtrue、それ以外はfalse
+	 * @param createdCount 生成する文字列の個数
 	 * @return ランダムな文字列のリスト 
 	 */
-	public List<String> generate(int charLength, boolean withNumber, int count) {
+	public List<String> generate(int charLength, boolean withNumber, int createdCount) {
 		// 生成した文字列を格納するリスト
 		List<String> list = new ArrayList<String>();
 		// 生成する個数分繰り返す
-		for (int i = 0; i < count; i++)  {
+		for (int i = 0; i < createdCount; i++)  {
 			if (withNumber) {
 				// 数字を含む文字列を生成する場合
 				list.add(RandomStringUtils.randomAlphanumeric(charLength));

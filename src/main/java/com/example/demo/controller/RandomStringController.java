@@ -28,7 +28,7 @@ public class RandomStringController {
 	public String generate(
 			@RequestParam("charLength") int charLength,
 			@RequestParam(name = "withNumber", defaultValue = "false") boolean withNumber,
-			@RequestParam(name = "createdCount", defaultValue = "1") Integer createdCount,
+			@RequestParam(name = "createdCount", defaultValue = "1") int createdCount,
 			Model model) {
 		// ランダムな文字列を生成
 		List<String> list = service.generate(charLength, withNumber, createdCount);
