@@ -28,12 +28,13 @@ public class RandomStringController {
 	public String generate(
 			@RequestParam("charLength") int charLength,
 			@RequestParam(name = "withNumber", defaultValue = "false") boolean withNumber,
+			@RequestParam(name = "createdCount", defaultValue = "1") int createdCount,
 			Model model) {
 		// ランダムな文字列を生成
-		List<String> list = service.generate(charLength, withNumber);
-		
+		List<String> list = service.generate(charLength, withNumber, createdCount);
+		// 生成した文字列リストをスコープに登録
 		model.addAttribute("randomList", list);
-		
+		// 画面遷移
 		return "random";
 	}
 }
