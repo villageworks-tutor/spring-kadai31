@@ -35,6 +35,11 @@ public class RandomStringController {
 		List<String> list = service.generate(charLength, withNumber, withAlphabet, createdCount);
 		// 生成した文字列リストをスコープに登録
 		model.addAttribute("randomList", list);
+		// 遷移先で入力した状況を再現するためにリクエストパラメータをスコープに登録
+		model.addAttribute("charLength", charLength);
+		model.addAttribute("withNumber", withNumber);
+		model.addAttribute("withAlphabet", withAlphabet);
+		model.addAttribute("createdCount", createdCount);
 		// 画面遷移
 		return "random";
 	}

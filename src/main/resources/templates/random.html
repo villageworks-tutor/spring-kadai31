@@ -9,11 +9,12 @@
 	<form  action="/random" method="post">
 		<p>
 			<select name="charLength">
-				<option th:each="i : ${#numbers.sequence(5, 10)}" th:value="${i}" th:text="${i}+ '文字'"></option> 
+				<option th:each="i : ${#numbers.sequence(5, 10)}" th:value="${i}" th:text="${i}+ '文字'" th:selected="${i == charLength}"></option> 
 			</select>
-			<input type="checkbox" name="withNumber" value="true" />数字を含める
-			<input type="checkbox" name="withAlphabet" value="true" />英字を含める<br />
-			<input type="number" name="createdCount" />個生成する
+			
+			<input type="checkbox" name="withNumber" value="true" th:checked="${withNumber}" />数字を含める
+			<input type="checkbox" name="withAlphabet" value="true" th:checked="${withAlphabet}" />英字を含める<br />
+			<input type="number" name="createdCount" th:value="${createdCount}" />個生成する
 		</p>
 		<p>
 			<button>作成する</button>
